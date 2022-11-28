@@ -9,15 +9,15 @@
 - 그 외 메테리얼 셋팅은 작업자가 손수 만져야 한다. ( 아직 샘플링된 메테리얼이 없다. )
 
 #절차
-- 1.임포트한 모델링을 유니티 씬 안에 배치
-- 2.해당 오브젝트에 MaterialSetting 컴포넌트 추가 ( 작업하다 귀찮다 생각되면 윈도우 창으로 변경 가능 )
-- 3. 해당 컴포넌트 작동 법
+1.임포트한 모델링을 유니티 씬 안에 배치
+2.해당 오브젝트에 MaterialSetting 컴포넌트 추가 ( 작업하다 귀찮다 생각되면 윈도우 창으로 변경 가능 )
+3. 해당 컴포넌트 작동 법
 -  a. Model에 셋팅할 모델 할당
 -  b. MeshRenders Setting 버튼 클릭 ( MeshRenders 프로퍼티에 자동으로 값 추가 )
 -  c. Materials에 MeshRenders의 개수와 똑같은 개수의 Material 할당
 -  d. Matreials setting 버튼 클릭 
--  
-- 4.텍스쳐 셋팅
+-
+4.텍스쳐 셋팅
 -  a. Window -> MaterialTexSetting(이후부터 커스텀 에디터로 지칭) 클릭
 -  b. StreamingAssets 폴더에 텍스트 파일 새로 생성
 -  c. 해당 텍스트 파일에 외부 프로그램의 텍스쳐 셋팅 값을 전부 긁어서 입력
