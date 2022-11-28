@@ -10,9 +10,9 @@
 
 #절차
 
-- 1.임포트한 모델링을 유니티 씬 안에 배치
-- 2.해당 오브젝트에 MaterialSetting 컴포넌트 추가 ( 작업하다 귀찮다 생각되면 윈도우 창으로 변경 가능 )
-- 3.해당 컴포넌트 작동 법
+1. 임포트한 모델링을 유니티 씬 안에 배치
+2. 해당 오브젝트에 MaterialSetting 컴포넌트 추가 ( 작업하다 귀찮다 생각되면 윈도우 창으로 변경 가능 )
+3. 해당 컴포넌트 작동 법
 -a. Model에 셋팅할 모델 할당
 -b. MeshRenders Setting 버튼 클릭 ( MeshRenders 프로퍼티에 자동으로 값 추가 )
 -c. Materials에 MeshRenders의 개수와 똑같은 개수의 Material 할당
