@@ -17,7 +17,7 @@
 -  b. MeshRenders Setting 버튼 클릭 ( MeshRenders 프로퍼티에 자동으로 값 추가 )
 -  c. Materials에 MeshRenders의 개수와 똑같은 개수의 Material 할당
 -  d. Matreials setting 버튼 클릭 
--
+
 4.텍스쳐 셋팅
 -  a. Window -> MaterialTexSetting(이후부터 커스텀 에디터로 지칭) 클릭
 -  b. StreamingAssets 폴더에 텍스트 파일 새로 생성
