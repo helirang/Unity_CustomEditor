@@ -18,14 +18,14 @@
 * c. Materials에 MeshRenders의 개수와 똑같은 개수의 Material 할당
 * d. Matreials setting 버튼 클릭 
 
-- 4.텍스쳐 셋팅
-- a. Window -> MaterialTexSetting(이후부터 커스텀 에디터로 지칭) 클릭
--  b. StreamingAssets 폴더에 텍스트 파일 새로 생성
-- c. 해당 텍스트 파일에 외부 프로그램의 텍스쳐 셋팅 값을 전부 긁어서 입력
--  d. 커스텀 에디터에 TextFileName에 텍스트 파일 이름 넣기. readme.txt면 readme.txt 전부 입력
--  e. Read Text Test 버튼 클릭 ( 파일 읽기 완료가 로그로 출력되면 정상 작동, Data List 프로퍼티에 파싱된 값이 넣어졌는지 확인 )
-- f. Material List에 3번에서 만든 메테리얼들을 전부 드래그 해서 드롭하기 ( Data List와 Material List의 개수가 같아야 정상이다 )
--  g. Texture List에 외부 프로그램에서 가져온 텍스트 전부 드래그 해서 드롭하기
--  h. Material Tex Setting 버튼 클릭 ( 완료 로그가 뜨면 정상, 오류 로그 발생하면 해당 지침에 따라 행동 )
+4. 텍스쳐 셋팅
+* a. Window -> MaterialTexSetting(이후부터 커스텀 에디터로 지칭) 클릭
+* b. StreamingAssets 폴더에 텍스트 파일 새로 생성
+* c. 해당 텍스트 파일에 외부 프로그램의 텍스쳐 셋팅 값을 전부 긁어서 입력
+* d. 커스텀 에디터에 TextFileName에 텍스트 파일 이름 넣기. readme.txt면 readme.txt 전부 입력
+* e. Read Text Test 버튼 클릭 ( 파일 읽기 완료가 로그로 출력되면 정상 작동, Data List 프로퍼티에 파싱된 값이 넣어졌는지 확인 )
+* f. Material List에 3번에서 만든 메테리얼들을 전부 드래그 해서 드롭하기 ( Data List와 Material List의 개수가 같아야 정상이다 )
+* g. Texture List에 외부 프로그램에서 가져온 텍스트 전부 드래그 해서 드롭하기
+* h. Material Tex Setting 버튼 클릭 ( 완료 로그가 뜨면 정상, 오류 로그 발생하면 해당 지침에 따라 행동 )
 
 11/28일 기준 62개 자동셋팅까지 확인
