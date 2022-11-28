@@ -29,3 +29,7 @@
 * h. Material Tex Setting 버튼 클릭 ( 완료 로그가 뜨면 정상, 오류 로그 발생하면 해당 지침에 따라 행동 )
 
 11/28일 기준 62개 자동셋팅까지 확인
+
+#Test_1
+![image](https://user-images.githubusercontent.com/66342017/204301894-914c2ba1-d9c2-463a-9055-4c66d93d7841.png)
+
