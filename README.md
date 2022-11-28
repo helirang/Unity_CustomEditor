@@ -31,7 +31,7 @@
 11/28일 기준 62개 자동셋팅까지 확인
 
 #Test_1 임포트된 모델. 그림자, 빛 반사 등등 HDRP 대부분의 기능 작동
-* A. Quality 셋팅. 퀄리티 업이 가능한 기술 적용. 실시간 x
+* A. Quality 셋팅. 퀄리티 업이 가능한 기술 적용. 실시간 x.
 ![image](https://user-images.githubusercontent.com/66342017/204301894-914c2ba1-d9c2-463a-9055-4c66d93d7841.png)
 * B. Performance && Quality 셋팅. 실시간 O
 ![image](https://user-images.githubusercontent.com/66342017/204307961-8a6ccdcb-2e12-40a7-8414-a6514d0d42af.png)
