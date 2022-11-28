@@ -34,7 +34,8 @@
 * A. Quality 셋팅. 퀄리티 업이 가능한 기술 적용. 실시간 x
 ![image](https://user-images.githubusercontent.com/66342017/204301894-914c2ba1-d9c2-463a-9055-4c66d93d7841.png)
 * B. Performance && Quality 셋팅. 실시간 O
-* 
+![image](https://user-images.githubusercontent.com/66342017/204307961-8a6ccdcb-2e12-40a7-8414-a6514d0d42af.png)
+
 
 #코딩은 에디터 제작과 일부 오픈소스 수정 외에 X
 #게임 안에서의 표현과 조명 등의 도메인 지식 증진
