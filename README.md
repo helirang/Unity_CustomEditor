@@ -34,7 +34,7 @@
 1. Test_1 임포트된 모델은 그림자, 빛 반사 등등 HDRP의  기능 작동 
 * A. Performance && Quality 셋팅. 실시간 O
 ![image](https://user-images.githubusercontent.com/66342017/204307961-8a6ccdcb-2e12-40a7-8414-a6514d0d42af.png)
-* B. Quality 셋팅. 퀄리티 업이 가능한 기술 적용. 실시간 x. ( 적용기술 Beta 메모리 누수 이슈로 중단하여 밝기 조절이 안되어있습니다. 차후 메모리 누수가 픽스되면 재진행 예정 )
+* B. Quality 셋팅. 추가 기술 적용. 실시간 x. ( 적용기술 Beta 메모리 누수 이슈로 중단하여 밝기 조절이 안되어있습니다. 차후 메모리 누수가 픽스되면 재진행 예정 )
 ![image](https://user-images.githubusercontent.com/66342017/204301894-914c2ba1-d9c2-463a-9055-4c66d93d7841.png)
 
 
