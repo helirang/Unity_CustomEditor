@@ -17,7 +17,6 @@
 
 1. 임포트한 모델을 유니티 씬 안에 배치
 2. CustomTools의 MaterialSetting 클릭
-3. 
 ![image](https://user-images.githubusercontent.com/66342017/220447135-62189382-7f62-4ca3-bf42-d78a031f5746.png)
 
 3. MaterialSetting 방법
