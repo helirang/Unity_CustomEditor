@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 using UnityEditor;
 using System.IO;
 
-public class MaterialTexSetting : EditorWindow
+public class MMDTextureSetting : EditorWindow
 {
     string[] errMsgs = {
         "파일 이름을 입력해 주세요",
@@ -19,18 +20,7 @@ public class MaterialTexSetting : EditorWindow
         "텍스쳐 파일 셋팅이 완료되었습니다."
     };
 
-    enum PropertyNames
-    {
-        dataList,
-        materialList,
-        textureList
-    }
-    string[] scrollPropertysName = {
-        "dataList",
-        "materialList",
-        "textureList"
-    };
-    Vector2[] scrollPositions = { new Vector2(0,0), new Vector2(0,0), new Vector2(0,0)};
+    public Vector2 scrollPosition;
 
     string filePath,fileName;
     bool groupEnabled;
@@ -39,15 +29,15 @@ public class MaterialTexSetting : EditorWindow
     [SerializeField] List<Material> materialList = new List<Material>();
     [SerializeField] List<Texture2D> textureList = new List<Texture2D>();
 
-    [MenuItem("Window/MaterialTextSetting")]
+    [MenuItem("CustomTools/MMD_TextureSetting")]
     static void Init()
     {
-        // Get existing open window or if none, make a new one:
-        MaterialTexSetting window = (MaterialTexSetting)EditorWindow.GetWindow(typeof(MaterialTexSetting));
-        window.Show();
+        MMDTextureSetting wnd = GetWindow<MMDTextureSetting>();
+        wnd.titleContent = new GUIContent("MMD_TextureSetting");
+        wnd.Show();
     }
 
-    void CatchERR(string message)
+    void ErrCatch(string message)
     {
         Debug.LogWarning(message);
     }
@@ -57,41 +47,33 @@ public class MaterialTexSetting : EditorWindow
         //to show the list of geo
         ScriptableObject target = this;
         SerializedObject so = new SerializedObject(target);
-        SerializedProperty stringsProperty = so.FindProperty(propertyName);
-        if (stringsProperty.isExpanded) 
-        {
-            int idx = (int)System.Enum.Parse(typeof(PropertyNames), propertyName);
-            scrollPositions[idx] = GUILayout.BeginScrollView(scrollPositions[idx], GUILayout.Width(300), GUILayout.Height(200));
-            EditorGUILayout.PropertyField(stringsProperty, true);
-            so.ApplyModifiedProperties();
-            GUILayout.EndScrollView();
-        }
-        else
-        {
-            EditorGUILayout.PropertyField(stringsProperty, true);
-            so.ApplyModifiedProperties();
-        }
+        EditorGUILayout.PropertyField(so.FindProperty(propertyName));
+        so.ApplyModifiedProperties();
     }
 
     void OnGUI()
     {
-        GUILayout.Label("Base Function", EditorStyles.boldLabel);
-        fileName = EditorGUILayout.TextField("TextFileName", fileName);
-        if (GUILayout.Button("Read Text Test"))
+        using (var scrollViewScope = 
+            new EditorGUILayout.ScrollViewScope(scrollPosition))
         {
-            ReadMaTex(fileName);
+            scrollPosition = scrollViewScope.scrollPosition;
+            fileName = EditorGUILayout.TextField("TextFileName", fileName);
+            if (GUILayout.Button("Read Text Test"))
+            {
+                ReadMaTex(fileName);
+            }
+            if (GUILayout.Button("Material Tex Setting"))
+            {
+                SettingTexture();
+            }
+            GUILayout.Label("ListData", EditorStyles.boldLabel);
+            ListPropertyMaker("dataList");
+            ListPropertyMaker("materialList");
+            ListPropertyMaker("textureList");
+            groupEnabled = EditorGUILayout.BeginToggleGroup("Optional Settings", groupEnabled);
+            filePath = EditorGUILayout.TextField("FilePath", filePath);
+            EditorGUILayout.EndToggleGroup();
         }
-        if (GUILayout.Button("Material Tex Setting"))
-        {
-            SettingTexture();
-        }
-        GUILayout.Label("ListData", EditorStyles.boldLabel);
-        ListPropertyMaker("dataList");
-        ListPropertyMaker("materialList");
-        ListPropertyMaker("textureList");
-        groupEnabled = EditorGUILayout.BeginToggleGroup("Optional Settings", groupEnabled);
-        filePath = EditorGUILayout.TextField("FilePath", filePath);
-        EditorGUILayout.EndToggleGroup();
     }
 
     void ReadMaTex(string fName)
@@ -99,31 +81,34 @@ public class MaterialTexSetting : EditorWindow
         dataList.Clear();
         if (fName == null)
         {
-            CatchERR(errMsgs[0]);
+            ErrCatch(errMsgs[0]);
             return;
         }
         string filePath = Path.Combine(Application.streamingAssetsPath, fName);
         FileInfo fileInfo = new FileInfo(filePath);
         if (!fileInfo.Exists)
         {
-            CatchERR(fName + errMsgs[1]);
+            ErrCatch(fName + errMsgs[1]);
             return;
         }
         string[] lines = fileInfo.Exists ? File.ReadAllLines(filePath) : null;
         
         if(lines != null && lines.Length > 0)
         {
-            string strTrim = string.Format(@"""Tex\");
-            string subTrim = string.Format(@"""tex/");
+            string strTrim = string.Format(".png");
+            string subTrim = string.Format(".jpg");
             foreach (string line in lines)
             {
-                int strStart = line.IndexOf(strTrim) == -1 ?
+                int strEnd = line.IndexOf(strTrim) == -1 ?
                     line.IndexOf(subTrim) : line.IndexOf(strTrim);
-                if (strStart != -1)
+                if (strEnd != -1)
                 {
-                    strStart += strTrim.Length;
-                    int strEnd = line.IndexOf('"', strStart);
-                    string data = line.Substring(strStart, strEnd - strStart);
+                    string data = "";
+                    for (int i = strEnd + 3; i >= 0; i--)
+                    {
+                        if (line[i] == '/' || line[i] == '\\' || line[i] == '\"') break;
+                        else data = line[i] + data;
+                    }
                     dataList.Add(data.Substring(0, data.IndexOf('.', 0)));
                 }
                 else
@@ -135,7 +120,7 @@ public class MaterialTexSetting : EditorWindow
         }
         else
         {
-            CatchERR(errMsgs[2]);
+            ErrCatch(errMsgs[2]);
         }
     }
 
