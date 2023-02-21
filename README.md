@@ -29,6 +29,9 @@
 * d. Setting Start 버튼 클릭하면 끝
 
 4. 텍스쳐 셋팅
+
+![image](https://user-images.githubusercontent.com/66342017/220449378-69bc629f-4e22-4634-abff-825c8cc39be5.png)
+
 * a. CustomTools의 TextureSetting 클릭
 * b. StreamingAssets 폴더에 텍스트 파일 새로 생성
 * c. 해당 텍스트 파일에 외부 프로그램(pmx editor)의 텍스쳐 셋팅 값을 전부 긁어서 입력 
