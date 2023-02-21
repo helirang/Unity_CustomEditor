@@ -18,9 +18,11 @@
 1. 임포트한 모델을 유니티 씬 안에 배치
 2. CustomTools의 MaterialSetting 클릭
 
+3. MaterialSetting 방법
+
 ![image](https://user-images.githubusercontent.com/66342017/220447135-62189382-7f62-4ca3-bf42-d78a031f5746.png)
 
-3. MaterialSetting 방법
+
 * a. AlembicModel에 씬에 배치한 모델 파일을 넣기(드래그 앤 드랍, 클릭 등)
 * b. Read All MeshRenders 버튼 클릭 ( MeshRender List의 값이 변경하였으면 정상 작동 )
 * c. Material List에  MeshRender List의 개수와 똑같은 개수의 Material을 만들어서 넣기
