@@ -2,45 +2,42 @@
  Custom Editor for practice &amp;&amp; personal use
 
 #개발 과정 설명
-- 외부 프로그램에서 모델링을 가져오는 중에 마테리얼 셋팅 값이 날라가는 문제가 발생. [ Alembic 형식 사용 ]
-- 해결법 : 유니티 내에서 마테리얼에 텍스쳐를 수동으로 넣으면 해결 가능.
-- [ 텍스쳐 외의 반사 값 등은 호화된지 않아 수동 조절 필요 ]
+- 문제 발생 : 외부 프로그램에서 모델링을 가져오는 중에 마테리얼 셋팅 값이 날라가는 문제가 발생. [ Alembic 형식 사용 ]
+- 해결법 : MMD 데이터를 텍스트롤 추출하여 유니티내에서 분류하여 적용하는 기능 구현
 
 #구현된 기능 간략 설명
-- 모델의 모든 메시렌더러를 뽑아내는 기능
-- 뽑아낸 메시 랜더러에 유저가 생성한 Material을 할당하는 기능
-- 텍스쳐 할당 기준 데이터 : 수동으로 외부 프로그램인 PMX Editor에서 .pmx 파일의 텍스쳐 값을 뽑아서 스트리밍 에셋 폴더에 넣기. 
-[@todo 텍스쳐 파일을 직접 할당하는 방식으로 변경 예정 ]
-- 텍스쳐 할당 기준 데이터에 맞춰 Material에 텍스쳐를 할당하는 기능
-- 2달 사용동안 .PMX 캐릭터와 .PMX 스테이지 변환에 문제 없음
+- materialSetting 에디터 : 
+  - 등록된 모델의 모든 메시렌더러를 조회하여 배열로 저정
+  - 모델의 에셋 위치에 새로운 폴더 생성
+  - 생성된 폴더에 메시랜더러 배열의 크기만큼 마테리얼 생성
+  - 각 메시랜더러의 마테리얼을 생성된 마테리얼로 교체
+  
+- textureSetting 에디터 : 
+  - MMD 데이터 텍스트의 자료를 분류하여 저장하는 기능. [ TextAsset 사용 ]
+  - 등록된 모델의 모든 메시랜더러의 마테리얼을 뽑아내서 배열에 저장하는 기능
+  [ 게임 씬에 배치된 모델이면 material을 사용 / 나머지는 sharedMaterial을 사용 ] 
+  - 가공된 MMD 데이터를 활용하여 마테리얼의 설정을 바꾸는 기능. 
 
 #절차
 
-1. 임포트한 모델을 유니티 씬 안에 배치
-2. CustomTools의 MaterialSetting 클릭
+# MaterialSetting 에디터
+![image](https://user-images.githubusercontent.com/66342017/232187654-dfae1a51-6c2c-43e5-9013-dff53f6a5664.png)
+1. 프로젝트 창에 위치한 모델을 AlembicModel로 드래그 앤 드롭
+2. 마테리얼의 기초 쉐이더를 셋팅
+3. Read All 버튼 클릭
+4. Setting Start 버튼 클릭
+5. 모델의 폴더 위치에 새로운 폴더와 마테리얼들이 생성되어 있다.
 
-3. MaterialSetting 방법
-
-![image](https://user-images.githubusercontent.com/66342017/220447135-62189382-7f62-4ca3-bf42-d78a031f5746.png)
-
-
-* a. AlembicModel에 씬에 배치한 모델 파일을 넣기(드래그 앤 드랍, 클릭 등)
-* b. Read All MeshRenders 버튼 클릭 ( MeshRender List의 값이 변경하였으면 정상 작동 )
-* c. Material List에  MeshRender List의 개수와 똑같은 개수의 Material을 만들어서 넣기
-* d. Setting Start 버튼 클릭하면 끝
-
-4. 텍스쳐 셋팅
-
-![image](https://user-images.githubusercontent.com/66342017/220449378-69bc629f-4e22-4634-abff-825c8cc39be5.png)
-
-* a. CustomTools의 TextureSetting 클릭
-* b. StreamingAssets 폴더에 텍스트 파일 새로 생성
-* c. 해당 텍스트 파일에 외부 프로그램(pmx editor)의 텍스쳐 셋팅 값을 전부 긁어서 입력 
-* d. 커스텀 에디터에 TextFileName에 텍스트 파일 이름 입력. ( 텍스쳐.txt면 확장자까지 전부 입력{ 텍스쳐.txt } )
-* e. Read Text Test 버튼 클릭 ( Data List 우측 값이 변경 되었으면 완료 )
-* f. Material List에 3-C에서 만든 메테리얼들을 전부 드래그 해서 드롭하기 ( Data List와 Material List의 개수가 같아야 정상이다 )
-* g. Texture List에 외부 프로그램에서 가져온 텍스쳐를 전부 드래그 해서 드롭하기 (.jpg와 .png 파일만 정상 작동)
-* h. Material Tex Setting 버튼 클릭 ( 완료 로그가 뜨면 정상, 오류 로그 발생하면 해당 지침에 따라 행동 )
+# TextureSetting 에디터
+![image](https://user-images.githubusercontent.com/66342017/232188811-0d176203-dadc-4cab-87f4-7826e8f7a126.png)
+1. MMD에서 추출한 데이터 텍스트를 Mmd Text File로 드래그 앤 드롭
+2. 원하는 데이터 추출 유형에 따라 버튼 클릭
+[메인 텍스쳐 추출만 원하면 Onlty Main Texture 버튼 클릭]
+[모든 텍스쳐 ( 메인, 스피어 텍스쳐, 톤 텍스쳐 )를 전부 원하면 All 버튼 클릭 ]
+3. 모델을 MaterialSetting 하단에 드래그 앤 드롭
+4. Read Alembic 버튼 클릭
+5. 텍스쳐 셋팅에 표시된 Need Texture List를 보고 필요한 텍스쳐 파일을 TextureList에 전부 드래그 해서 넣기
+6. Final 버튼을 클릭
 
 02/22일까지 정상 작동 확인
 
