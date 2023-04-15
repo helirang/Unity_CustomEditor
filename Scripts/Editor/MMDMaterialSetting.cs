@@ -159,7 +159,7 @@ namespace KFMGT4
                 Material material = new Material(materialShader);
                 string newAssetPath = path + materialName + i.ToString() + ".mat";
                 AssetDatabase.CreateAsset(material, newAssetPath);
-                meshRendererlList[i].material = material;
+                meshRendererlList[i].sharedMaterial = material;
             }
             Debug.Log(normalMsgs[0]);
         }

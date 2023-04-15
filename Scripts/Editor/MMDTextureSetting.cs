@@ -103,7 +103,8 @@ namespace KFMGT4
                 EditorGUILayout.Space(20f);
 
                 GUILayout.Label("TxtureSetting", EditorStyles.boldLabel);
-                PropertyMaker("mmdTextFile");
+                mmdTextFile = (TextAsset)EditorGUILayout.ObjectField(mmdTextFile, typeof(TextAsset), true);
+
                 EditorGUILayout.Space(20f);
                 if (GUILayout.Button("Read Only Maint Texture"))
                 {
@@ -142,11 +143,6 @@ namespace KFMGT4
             }
         }
 
-        void SetModel(GameObject gameObject)
-        {
-
-        }
-
         void ReadTextureData(ETexureType readTexureType)
         {
             texDataList.Clear();
@@ -174,6 +170,7 @@ namespace KFMGT4
                 {
                     //PMX 에디터에서 재질 복사시에 생기는 불필요 데이터 제거
                     //첫번째 줄에 ;Material과 마지막 줄에 빈 line 제거
+                    Debug.Log("Line");
                     if (line.IndexOf("Material") == -1 || line.IndexOf(";Material")!=-1)
                     {
                         continue;
