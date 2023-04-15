@@ -18,7 +18,7 @@ namespace KFMGT4
         string[] normalMsgs =
         {
         "텍스쳐 추출 완료",
-        "메테리얼 추출이 완료 되었습니다.",
+        "마테리얼 추출이 완료 되었습니다.",
         "모든 텍스쳐 셋팅이 완료되었습니다."
         };
 
@@ -50,7 +50,7 @@ namespace KFMGT4
         [SerializeField] List<MmdData> texDataList = new List<MmdData>();
         [SerializeField] List<Texture2D> textureList = new List<Texture2D>();
 
-        [Header("메테리얼 필드 값")]
+        [Header("마테리얼 필드 값")]
         GameObject alembicModel;
         [SerializeField] GameObject AlembicModel
         {
@@ -265,7 +265,7 @@ namespace KFMGT4
                     else
                     {
                         ErrCatch(i + "번째 이미지가 없습니다. 파일명 : " + textureName);
-                        ErrCatch("메테리얼 셋팅이 비정상적으로 종료되었습니다.");
+                        ErrCatch("마테리얼 셋팅이 비정상적으로 종료되었습니다.");
                         return;
                     }
                 }
