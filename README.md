@@ -52,12 +52,12 @@
 6. Final 버튼을 클릭
 
 
-#에디터 사용 Project 결과물
-![image](https://user-images.githubusercontent.com/66342017/204307961-8a6ccdcb-2e12-40a7-8414-a6514d0d42af.png)
+# 에디터 사용 Project 결과물
+
 ![image](https://user-images.githubusercontent.com/66342017/232549802-c4de6861-a356-4425-b743-8a4cccd8c9e3.png)
 
 
-#개발 예정
+# 개발 예정
 1. 현재는 마테리얼 등의 디자인 지식 부족으로 중지 { 디자인보다 개발에 집중 예정 }
 2. 차후 생활이 안정화되면 피부 프리셋 등의 마테리얼 프리셋을 추가할 예정
 
