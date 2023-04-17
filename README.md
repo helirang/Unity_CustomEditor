@@ -12,13 +12,19 @@
   - 생성된 폴더에 메시랜더러 배열의 크기만큼 마테리얼 생성
   - 각 메시랜더러의 마테리얼을 생성된 마테리얼로 교체
   
+- MMDSettingTransper 에디터 :
+  - base 모델의 셋팅을 target 모델에 복사하는 기능
+  - 메쉬 렌더러 셋팅 복사 ( 모션 벡터 / 그림자 생성 여부 / 메테리얼 값 )
+  - 메쉬 렌더러 갯수 복사 
+  - ( base 모델에 없는 메쉬 렌더러가 target 모델에 있을 경우, 해당 오브젝트를 파괴 / 변경 사항 프리팹 저장 기능 )  
+
 - textureSetting 에디터 : 
   - MMD 데이터 텍스트의 자료를 분류하여 저장하는 기능. [ TextAsset 사용 ]
   - 등록된 모델의 모든 메시랜더러의 마테리얼을 뽑아내서 배열에 저장하는 기능
   [ 게임 씬에 배치된 모델이면 material을 사용 / 나머지는 sharedMaterial을 사용 ] 
   - 가공된 MMD 데이터를 활용하여 마테리얼의 설정을 바꾸는 기능. 
 
-#절차
+# 사용법 
 
 # MaterialSetting 에디터
 ![image](https://user-images.githubusercontent.com/66342017/232187654-dfae1a51-6c2c-43e5-9013-dff53f6a5664.png)
