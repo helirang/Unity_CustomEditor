@@ -41,7 +41,7 @@
 3. Setting Transper 버튼을 클릭
 
 # MMDTextureSetting 에디터
-![image](https://user-images.githubusercontent.com/66342017/232188811-0d176203-dadc-4cab-87f4-7826e8f7a126.png)
+![dddddd](https://user-images.githubusercontent.com/66342017/232561606-b1ed784b-2581-43ff-9c41-fa87424fdc28.JPG)
 1. MMD에서 추출한 데이터 텍스트를 Mmd Text File로 드래그 앤 드롭
 2. 원하는 데이터 추출 유형에 따라 버튼 클릭
 [메인 텍스쳐 추출만 원하면 Onlty Main Texture 버튼 클릭]
