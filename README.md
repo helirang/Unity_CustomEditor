@@ -28,6 +28,12 @@
 4. Setting Start 버튼 클릭
 5. 모델의 폴더 위치에 새로운 폴더와 마테리얼들이 생성되어 있다.
 
+# MMDSettingTransper 에디터
+![image](https://user-images.githubusercontent.com/66342017/232547795-ad1c0595-0a68-49b8-9153-dd6692d271a8.png)
+1. 유니티 셋팅이 되어있는 캐릭터를 base 모델에 넣기
+2. 데이터를 받을 모델을 target 모델에 넣기
+3. Setting Transper 버튼을 클릭
+
 # TextureSetting 에디터
 ![image](https://user-images.githubusercontent.com/66342017/232188811-0d176203-dadc-4cab-87f4-7826e8f7a126.png)
 1. MMD에서 추출한 데이터 텍스트를 Mmd Text File로 드래그 앤 드롭
@@ -39,20 +45,16 @@
 5. 텍스쳐 셋팅에 표시된 Need Texture List를 보고 필요한 텍스쳐 파일을 TextureList에 전부 드래그 해서 넣기
 6. Final 버튼을 클릭
 
-02/22일까지 정상 작동 확인
 
-#에디터 사용 Project 결과물 및 느낌점
-1. Test_1 임포트된 모델은 그림자, 빛 반사 등등 HDRP의  기능 작동 
-* A. Performance && Quality 셋팅. 실시간 O
+#에디터 사용 Project 결과물
 ![image](https://user-images.githubusercontent.com/66342017/204307961-8a6ccdcb-2e12-40a7-8414-a6514d0d42af.png)
-* B. Quality 셋팅. Pre-release 기술 적용. 실시간 x. ( 적용기술 Beta 메모리 누수 이슈로 중단하여 밝기 조절이 안되어있습니다. 차후 메모리 누수가 픽스되면 재진행 예정 )
-![image](https://user-images.githubusercontent.com/66342017/204301894-914c2ba1-d9c2-463a-9055-4c66d93d7841.png)
+![image](https://user-images.githubusercontent.com/66342017/232549802-c4de6861-a356-4425-b743-8a4cccd8c9e3.png)
+
 
 #개발 예정
 1. 현재는 마테리얼 등의 디자인 지식 부족으로 중지 { 디자인보다 개발에 집중 예정 }
 2. 차후 생활이 안정화되면 피부 프리셋 등의 마테리얼 프리셋을 추가할 예정
 
-* 코딩은 에디터 제작과 일부 오픈소스 수정 외에는 X
 * 다른 외부 3D 프로그램과 유니티 간의 데이터 교환에 대한 지식 일부 습득
 * 게임 안에서의 표현과 메테리얼, 조명, 필터 등의 도메인 지식 증진
 * 배포를 위해 정리된 코드들을 보며 코드 정리 일부 학습
