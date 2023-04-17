@@ -40,7 +40,7 @@ namespace KFMGT4
 
                 EditorGUILayout.Space(20f);
                 GUILayout.Label("Data Base -> Target", EditorStyles.boldLabel);
-                if (GUILayout.Button("Material Transper"))
+                if (GUILayout.Button("Setting Transper"))
                 {
                     SettingCopy();
                 }

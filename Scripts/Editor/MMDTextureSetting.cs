@@ -115,7 +115,7 @@ namespace KFMGT4
                     ReadTextureData(ETexureType.ALL);
                 }
                 EditorGUILayout.Space(20f);
-                GUILayout.Label("TxtureData", EditorStyles.boldLabel);
+                GUILayout.Label("ReadTextureData", EditorStyles.boldLabel);
                 EditorGUILayout.IntField("ReadTextLine", texDataList.Count);
                 ListPropertyMaker("needTextureList");
 
@@ -133,7 +133,7 @@ namespace KFMGT4
                 ListPropertyMaker("materialList");
 
                 EditorGUILayout.Space(20f);
-                GUILayout.Label("TextureSetMaterial", EditorStyles.boldLabel);
+                GUILayout.Label("RequiredTextureData", EditorStyles.boldLabel);
                 EditorGUILayout.IntField("TextureCount", textureList.Count);
                 ListPropertyMaker("textureList");
                 if (GUILayout.Button("FinalButton"))
