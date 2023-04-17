@@ -6,7 +6,7 @@
 - 해결법 : MMD 데이터를 텍스트롤 추출하여 유니티내에서 분류하여 적용하는 기능 구현
 
 #구현된 기능 간략 설명
-- materialSetting 에디터 : 
+- MMDMaterialSetting 에디터 : 
   - 등록된 모델의 모든 메시렌더러를 조회하여 배열로 저정
   - 모델의 에셋 위치에 새로운 폴더 생성
   - 생성된 폴더에 메시랜더러 배열의 크기만큼 마테리얼 생성
@@ -18,7 +18,7 @@
   - 메쉬 렌더러 갯수 복사 
   - ( base 모델에 없는 메쉬 렌더러가 target 모델에 있을 경우, 해당 오브젝트를 파괴 / 변경 사항 프리팹 저장 기능 )  
 
-- textureSetting 에디터 : 
+- MMDTextureSetting 에디터 : 
   - MMD 데이터 텍스트의 자료를 분류하여 저장하는 기능. [ TextAsset 사용 ]
   - 등록된 모델의 모든 메시랜더러의 마테리얼을 뽑아내서 배열에 저장하는 기능
   [ 게임 씬에 배치된 모델이면 material을 사용 / 나머지는 sharedMaterial을 사용 ] 
@@ -26,7 +26,7 @@
 
 # 사용법 
 
-# MaterialSetting 에디터
+# MMDMaterialSetting 에디터
 ![image](https://user-images.githubusercontent.com/66342017/232187654-dfae1a51-6c2c-43e5-9013-dff53f6a5664.png)
 1. 프로젝트 창에 위치한 모델을 AlembicModel로 드래그 앤 드롭
 2. 마테리얼의 기초 쉐이더를 셋팅
@@ -40,7 +40,7 @@
 2. 데이터를 받을 모델을 target 모델에 넣기
 3. Setting Transper 버튼을 클릭
 
-# TextureSetting 에디터
+# MMDTextureSetting 에디터
 ![image](https://user-images.githubusercontent.com/66342017/232188811-0d176203-dadc-4cab-87f4-7826e8f7a126.png)
 1. MMD에서 추출한 데이터 텍스트를 Mmd Text File로 드래그 앤 드롭
 2. 원하는 데이터 추출 유형에 따라 버튼 클릭
